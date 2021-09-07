@@ -1,0 +1,28 @@
+server:
+  port: 8084
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  datasource:
+    password: 6b1c46511d9bb0b2275d1de4c0e416186a2f1e7906349f3abff1bb618e5e9ffb
+    url: jdbc:postgresql://ec2-54-195-195-81.eu-west-1.compute.amazonaws.com:5432/d8vnotpegq750l
+    username: xgtvtxegmjescg
+#    password: chimolos99
+#    url: jdbc:postgresql://localhost:5432/newcheck
+#    username: postgres
+    hikari:
+      driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+#  servlet:
+#    multipart:
+#      max-file-size: 250MB
+#      max-request-size: 200MB

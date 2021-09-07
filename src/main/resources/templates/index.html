@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Welcome to Upperlink Digitals</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed"
+                        data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                        aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"  href="#" th:href="@{/}">Home</a>
+                <a class="navbar-brand" th:href="@{/users}">Admin</a>
+<!--                <a class="navbar-brand" th:href="@{/registeradmin}">Register</a>-->
+<!--                <a class="navbar-brand" th:href="@{/registeruser}">apply</a>-->
+            </div>
+        </div>
+    </nav>
+    <br>
+
+    <div>
+        <p class="alert alert-danger" th:if="${message} != null" th:text="${message}"></p>
+    </div>
+
+    <br>
+  <div class="container text-center">
+    <h1>Welcome to Upperlink Digitals</h1>
+<!--    <h3><a th:href="@{/users}">List of Users</a></h3>-->
+<!--      th:if="${user.isAdmin() == false}"-->
+<!--      <h3 th:text="${#request.getParameter('error')}">To apply for a job click here<a th:href="@{/registeruser}"> Apply </a></h3>-->
+<!--      <h3 th:if="${#request.getParameter('error') == false}">To apply for a job click here<a th:href="@{/registeruser}"> Apply </a></h3>-->
+      <h3 th:if="${okay}">To apply for a job click here <a th:href="@{/registeruser}"><span th:text="${okay}"></span></a></h3>
+      <h3 th:if="${error}"><div th:text="${error}"></div></h3>
+  </div>
+
+    <script type="text/javascript" src="/webjars/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
