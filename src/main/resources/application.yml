@@ -26,3 +26,7 @@ spring:
 #    multipart:
 #      max-file-size: 250MB
 #      max-request-size: 200MB
+cloudinary:
+  cloud_name: htazpx9gc
+  api_key: 736435964634244
+  api_secret: FZxYuVQzCPV8-Oq2poTcGiqK3SY

@@ -20,16 +20,24 @@ public class Applicant extends AppUser{
 //    @Size(min = 4, message = "Cover letter too short. Please complete")
     private String coverLetter;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "uploads_id", referencedColumnName = "id")
-    private FileDB fileDB;
+    @NotBlank
+    private String passportPhoto;
 
-    public Applicant(String firstName, String surname, String email, String phoneNumber,
-                     String coverLetter, FileDB fileDB, AppUserRole appUserRole) {
-        super(firstName, surname, email, appUserRole );
+    private String passportPath;
+
+    @NotBlank
+    private String resume;
+
+    private String resumePath;
+
+    public Applicant(String firstName, String surname, String email,  String phoneNumber, String coverLetter, String passportPhoto,  String resume, AppUserRole appUserRole) {
+        super(firstName, surname, email, appUserRole);
         this.phoneNumber = phoneNumber;
         this.coverLetter = coverLetter;
-        this.fileDB = fileDB;
+        this.passportPhoto = passportPhoto;
+        this.passportPath = passportPath;
+        this.resume = resume;
+        this.resumePath = resumePath;
     }
 
     public String getPhoneNumber() {

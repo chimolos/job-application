@@ -19,28 +19,31 @@
       <tr>
         <th>User ID</th>
         <th>Role</th>
+        <th>Passport Photo</th>
         <th>E-mail</th>
         <th>First Name</th>
         <th>Surname</th>
         <th>Phone Number</th>
         <th>CoverLetter</th>
-        <th>Uploads Id</th>
-<!--        <th>Resume</th>-->
+        <th>Resume</th>
       </tr>
       </thead>
+
       <tbody>
       <tr th:each="app:${applicant}">
         <td><a class="btn btn-info" th:href="@{/users}" th:text="${applicant.id}"></a></td>
         <td th:text="${applicant.appUserRole}"></td>
+        <td>
+          <a th:href="@{${applicant.passportPath}}"><img th:src="@{${applicant.passportPath}}" th:width="200" th:height="100"></a>
+        </td>
         <td th:text="${applicant.email}"></td>
         <td th:text="${applicant.firstName}"></td>
         <td th:text="${applicant.surname}"></td>
         <td th:text="${applicant.phoneNumber}"></td>
         <td th:text="${applicant.coverLetter}"></td>
-        <td><a class="btn btn-info" th:href="@{/uploads/{id}(id=${applicant.fileDB.getId()})}" th:text="${applicant.fileDB.getId()}"></a></td>
-<!--        <td> <a class="btn btn-info" th:href="@{/deleteuser/{id}(id=${applicant.id})}" th:text="Delete"></a></td>-->
-        <!--        <td th:text="${applicant.surname}"></td>-->
-
+        <td>
+          <a th:href="@{${applicant.resumePath}}" th:text="${applicant.resume}"></a>
+        </td>
       </tr>
       </tbody>
     </table>
