@@ -4,7 +4,7 @@ import com.chidee.back.appuser.AppUser;
 import com.chidee.back.appuser.AppUserRole;
 import com.chidee.back.appuser.AppUserService;
 import com.chidee.back.appuser.Applicant;
-import com.chidee.back.appuser.Number;
+//import com.chidee.back.appuser.Number;
 import com.chidee.back.appuser.uploadtypes.FileDB;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,7 @@ public class RegistrationService {
 
 
     public String register(RegistrationRequest request, MultipartFile file1, MultipartFile file2) throws IOException {
-        Number number = new Number();
+//        Number number = new Number();
 
         //to check if email is valid
         boolean isValidEmail = emailValidator.test(request.getEmail());
@@ -53,7 +53,7 @@ public class RegistrationService {
     }
 
     public String registerAdmin(RegistrationRequestAdmin request) {
-        Number number = new Number();
+//        Number number = new Number();
 
         boolean isValidEmail = emailValidator.test(request.getEmail());
         if (!isValidEmail) {

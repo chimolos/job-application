@@ -1,7 +1,7 @@
 package com.chidee.back.registration;
 
 import com.chidee.back.appuser.AppUserService;
-import com.chidee.back.appuser.Number;
+//import com.chidee.back.appuser.Number;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,7 +38,7 @@ public class RegistrationController {
 
     @GetMapping("/registeradmin")
     public String showAdminForm(Model model, RedirectAttributes result) {
-        Number number = new Number();
+//        Number number = new Number();
 
         if (appUserService.countAdmin() == 1) {
             result.addFlashAttribute("message", "You are not allowed access");
@@ -60,7 +60,7 @@ public class RegistrationController {
 
     @GetMapping("/registeruser")
     public String showRegistrationForm(@ModelAttribute("applicant") RegistrationRequest request) {
-        Number number = new Number();
+//        Number number = new Number();
 
         if (appUserService.countUsers() ==4) {
 //            result.addAttribute("error", "Application closed");
